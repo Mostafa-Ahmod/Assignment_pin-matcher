@@ -1,14 +1,19 @@
 // Pin Generate Section 
-
-    document.getElementById("generate-btn").addEventListener('click', function () {
+        document.getElementById("generate-btn").addEventListener('click', function () {
         let resultGen = document.getElementById("result-gen").value;
         let number = Math.random() * 10000;
         let roundNum = Math.round(number);
          document.getElementById("result-gen").value = roundNum;
+         
+         //if notify is displayed then display property become none
+         if ((document.getElementById('dontMatch').style.display = 'block') || (document.getElementById('pinMatched').style.display = 'block')) {
+            document.getElementById('dontMatch').style.display = 'none';
+            document.getElementById('pinMatched').style.display = 'none';
+         }
+        //become all clear 
+          document.getElementById('result').value = "";
      });
     
-
-
 // key board section
 
     let numbers = document.getElementsByClassName('number');
@@ -19,20 +24,17 @@
        document.getElementById('result').value = output;
      });
 }
-
-
 // submit button handler
 document.getElementById("submit-btn").addEventListener('click', function () {
     if (document.getElementById("result-gen").value ===  document.getElementById('result').value) {
         document.getElementById("pinMatched").style.display = 'block';
+        document.getElementById("dontMatch").style.display = 'none';
     }
     else {
         document.getElementById("dontMatch").style.display = 'block';
+        document.getElementById("pinMatched").style.display = 'none';
     }
 });
-
-
-
 //Extra....
 // allClear and backspaceHandler 
 document.getElementById('clear').addEventListener('click',function () {
