@@ -39,6 +39,12 @@ document.getElementById("submit-btn").addEventListener('click', function () {
 // allClear and backspaceHandler 
 document.getElementById('clear').addEventListener('click',function () {
     document.getElementById('result').value = "";
+    
+    //if notify is displayed then display property become none
+    if ((document.getElementById('dontMatch').style.display = 'block') || (document.getElementById('pinMatched').style.display = 'block')) {
+        document.getElementById('dontMatch').style.display = 'none';
+        document.getElementById('pinMatched').style.display = 'none';
+     }
 }); 
 document.getElementById('backspace').addEventListener('click',function () {
     let output = document.getElementById('result').value.toString();

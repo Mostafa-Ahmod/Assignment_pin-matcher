@@ -29,7 +29,7 @@ body {
 }
 .generate-btn:hover{
     background-color: rgb(61, 79, 184);
-    border: 8px solid #adb3d1;
+    border: 8px solid #363e70;
 }
 
 .generate-btn:focus{
